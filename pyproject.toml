@@ -1,0 +1,29 @@
+[project]
+name = "trace32-python"
+version = "0.0.1"
+authors = [
+    {name = "雷小鸥", email = "leno.augenstern@qq.com"},
+]
+description = "trace32 python wrapper"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "GPL-3-only"}
+classifiers = [
+    "License :: OSI Approved :: GNU GENERAL PUBLIC LICENSE",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+
+[project.scripts]
+generate_benchmark = "trace32.rsa_wrapper:generate_benchmark"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-data]
+your_project = [
+    "lib/*.so",
+    "lib/*.dll", 
+    "lib/*.dylib",
+]

@@ -6,10 +6,11 @@
 @许可: MIT License
 @版本: Version 1.0
 """
-from ._trace32 import *
+from . import errors as T32Error
 
+from ._trace32 import DeviceType, T32
 
-__all__ = ['DeviceType', 'T32']
+__all__ = ['DeviceType', 'T32', 'T32Error']
 
 
 

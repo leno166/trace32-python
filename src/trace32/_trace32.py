@@ -20,15 +20,15 @@ CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 match (platform.system(), sizeof(c_void_p)):
     case ("Windows" | "CYGWIN"), 4:
-        __t32__ = CDLL(os.path.join(CURRENT_DIR, r"./capi/dll/t32api.dll"))
+        __t32__ = CDLL(os.path.join(CURRENT_DIR, 'lib', 't32api.dll'))
     case ("Windows" | "CYGWIN"), _:
-        __t32__ = CDLL(os.path.join(CURRENT_DIR, r"./capi/dll/t32api64.dll"))
+        __t32__ = CDLL(os.path.join(CURRENT_DIR, 'lib', 't32api64.dll'))
     case "Darwin", 4:
-        __t32__ = CDLL(os.path.join(CURRENT_DIR, r"./capi/dll/t32api.dylib"))
+        __t32__ = CDLL(os.path.join(CURRENT_DIR, 'lib', 't32api.dylib'))
     case _, 4:
-        __t32__ = CDLL(os.path.join(CURRENT_DIR, r"./capi/dll/t32api.so"))
+        __t32__ = CDLL(os.path.join(CURRENT_DIR, 'lib', 't32api64.so'))
     case _, _:
-        __t32__ = CDLL(os.path.join(CURRENT_DIR, r"./capi/dll/t32api64.so"))
+        __t32__ = CDLL(os.path.join(CURRENT_DIR, 'lib', 't32api64.so'))
 
 
 def set_error_hook() -> None:
